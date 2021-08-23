@@ -1,20 +1,20 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
 
 export async function getServerSideProps(context) {
-  const res = await fetch(`/api/`)
-  const data = await res.json()
+  const res = await fetch(`https://nextjs-rewrite-subdomain2path.vercel-support.app/api/`);
+  const data = await res.json();
 
   if (!data) {
     return {
       notFound: true,
-    }
+    };
   }
 
   return {
-    props: {data}, // will be passed to the page component as props
-  }
+    props: { data }, // will be passed to the page component as props
+  };
 }
 
 export default function Home(data) {
@@ -33,7 +33,7 @@ export default function Home(data) {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
@@ -74,12 +74,12 @@ export default function Home(data) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }
