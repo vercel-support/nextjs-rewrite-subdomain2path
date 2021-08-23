@@ -1,6 +1,6 @@
 module.exports = {
   reactStrictMode: true,
-  async redirects() {
+  async rewrites() {
     return [
 		{
 			"source": "/(.*)",
@@ -9,7 +9,6 @@ module.exports = {
 				"value": "(?<sub>.*)\\.nextjs-rewrite-subdomain2path.vercel-support\\.app"
 			}],
 			"destination": "/user/:sub",
-			permanent: true,
 		}
     ]
   },
