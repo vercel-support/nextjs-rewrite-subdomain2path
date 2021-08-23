@@ -8,7 +8,8 @@ module.exports = {
 				"type": "host",
 				"value": "(?<sub>.*)\\.nextjs-rewrite-subdomain2path.vercel-support\\.app"
 			}],
-			"destination": "/user/:sub"
+			"destination": "/user/:sub",
+			permanent: true,
 		}
     ]
   },
