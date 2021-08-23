@@ -2,7 +2,23 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export async function getServerSideProps(context) {
+  const res = await fetch(`/api/`)
+  const data = await res.json()
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    props: {data}, // will be passed to the page component as props
+  }
+}
+
+export default function Home(data) {
+  console.log(data);
   return (
     <div className={styles.container}>
       <Head>
