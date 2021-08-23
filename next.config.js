@@ -1,6 +1,6 @@
 module.exports = {
   reactStrictMode: true,
-  async rewrites() {
+  async redirects() {
     return [
 		{
 			"source": "/(.*)",
